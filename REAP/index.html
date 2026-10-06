@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>REAP | Research, Evaluation, Agents, Production</title>
+  <meta name="title" content="REAP | Research, Evaluation, Agents, Production">
+  <meta name="description" content="REAP is a premium technology and AI development company specializing in deep learning, machine vision, robust research help, and autonomous agents.">
+  <meta name="keywords" content="AI development, machine learning, medical image analysis, autonomous agents, website development, research help, computer vision, railway safety">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- LeafletJS (for interactive map) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+  <!-- Header Section -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="#" class="logo" id="nav-logo">
+        <img src="assets/logo.png" alt="REAP Logo">
+        <span>REAP</span>
+      </a>
+      
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav class="nav-links" id="nav-links">
+        <a href="#hero" class="active" data-i18n="nav.home">Home</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#tech-stack" data-i18n="nav.techstack">Tech Stack</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#team" data-i18n="nav.team">Team</a>
+        <a href="#careers" data-i18n="nav.careers">Careers</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-trigger" id="search-trigger" aria-label="Search (Ctrl+K)" type="button" title="Search (Ctrl+K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <div class="lang-switcher" id="lang-switcher">
+          <button class="lang-toggle" id="lang-toggle" aria-label="Change language" aria-haspopup="true">
+            <i class="fa-solid fa-globe"></i>
+            <span id="lang-current">EN</span>
+            <i class="fa-solid fa-chevron-down lang-caret"></i>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button class="lang-option active" data-lang="en" type="button">English</button>
+            <button class="lang-option" data-lang="es" type="button">Español</button>
+            <button class="lang-option" data-lang="bn" type="button">বাংলা</button>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-secondary" style="padding: 0.5rem 1.5rem; font-size: 0.85rem;" data-i18n="nav.letstalk">Let's Talk</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-grid-bg"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge" data-i18n="hero.badge">Translating Intelligence</div>
+          <h1 data-i18n-html="hero.h1">Intelligence, <span class="text-gradient">Engineered</span> for Reality.</h1>
+          <p data-i18n="hero.p">We are a high-performance software and AI laboratory building the future of autonomous systems, computer vision, and medical diagnostics.</p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn btn-primary" data-i18n="hero.btn.projects">Our Projects</a>
+            <a href="#about" class="btn btn-secondary" data-i18n="hero.btn.learnmore">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-interactive-node"></div>
+          <div class="hero-terminal glass-panel">
+            <div class="hero-terminal-bar">
+              <span class="term-dot dot-red"></span>
+              <span class="term-dot dot-yellow"></span>
+              <span class="term-dot dot-green"></span>
+              <span class="hero-terminal-title">reap-agent &mdash; zsh</span>
+            </div>
+            <div class="hero-terminal-body" id="hero-terminal-body" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-down" onclick="document.getElementById('about').scrollIntoView();">
+        <span></span>
+        Scroll Down
+      </div>
+    </section>
+
+    <!-- Infinite Marquee Strip -->
+    <div class="marquee-strip">
+      <div class="marquee-track">
+        <span data-i18n="marquee.dl">Deep Learning</span><span class="dot">&bull;</span>
+        <span data-i18n="marquee.cv">Computer Vision</span><span class="dot">&bull;</span>
+        <span data-i18n="marquee.med">Medical AI</span><span class="dot">&bull;</span>
+        <span data-i18n="marquee.agents">Autonomous Agents</span><span class="dot">&bull;</span>
+        <span data-i18n="marquee.pub">Research Publications</span><span class="dot">&bull;</span>
+        <span data-i18n="marquee.prod">Production Systems</span><span class="dot">&bull;</span>
+        <span data-i18n="marquee.dl">Deep Learning</span><span class="dot">&bull;</span>
+        <span data-i18n="marquee.cv">Computer Vision</span><span class="dot">&bull;</span>
+        <span data-i18n="marquee.med">Medical AI</span><span class="dot">&bull;</span>
+        <span data-i18n="marquee.agents">Autonomous Agents</span><span class="dot">&bull;</span>
+        <span data-i18n="marquee.pub">Research Publications</span><span class="dot">&bull;</span>
+        <span data-i18n="marquee.prod">Production Systems</span><span class="dot">&bull;</span>
+      </div>
+    </div>
+
+    <!-- About Section (How We Work) -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge" data-i18n="about.badge">Methodology</span>
+          <h2 data-i18n="about.h2">How We Work</h2>
+          <p data-i18n="about.p">Our name describes our cycle of innovation, carrying projects from theoretical discovery through to reliable deployment.</p>
+        </div>
+        
+        <div class="about-split-grid">
+          <!-- Visual side: animated REAP cycle diagram -->
+          <div class="about-visual-side reveal">
+            <div class="about-img-frame">
+              <div class="project-svg-fallback" style="background: radial-gradient(circle at center, rgba(0, 242, 254, 0.12), var(--bg-secondary));">
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="width: 80%; height: auto;">
+                  <defs>
+                    <linearGradient id="cycle-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#00f2fe"/>
+                      <stop offset="50%" stop-color="#0072ff"/>
+                      <stop offset="100%" stop-color="#7f00ff"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- Rotating dashed orbit -->
+                  <circle cx="200" cy="200" r="140" fill="none" stroke="url(#cycle-grad)" stroke-width="2" stroke-dasharray="6 10" opacity="0.55">
+                    <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="30s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="200" cy="200" r="95" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                  <!-- Connecting spokes -->
+                  <line x1="200" y1="92" x2="200" y2="150" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <line x1="308" y1="200" x2="250" y2="200" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <line x1="200" y1="308" x2="200" y2="250" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <line x1="92" y1="200" x2="150" y2="200" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <!-- Node R -->
+                  <circle cx="200" cy="60" r="32" fill="rgba(0,242,254,0.1)" stroke="#00f2fe" stroke-width="2"/>
+                  <text x="200" y="70" text-anchor="middle" fill="#00f2fe" font-family="'Outfit', sans-serif" font-size="26" font-weight="700">R</text>
+                  <!-- Node E -->
+                  <circle cx="340" cy="200" r="32" fill="rgba(0,114,255,0.1)" stroke="#0072ff" stroke-width="2"/>
+                  <text x="340" y="210" text-anchor="middle" fill="#0072ff" font-family="'Outfit', sans-serif" font-size="26" font-weight="700">E</text>
+                  <!-- Node A -->
+                  <circle cx="200" cy="340" r="32" fill="rgba(127,0,255,0.1)" stroke="#7f00ff" stroke-width="2"/>
+                  <text x="200" y="350" text-anchor="middle" fill="#7f00ff" font-family="'Outfit', sans-serif" font-size="26" font-weight="700">A</text>
+                  <!-- Node P -->
+                  <circle cx="60" cy="200" r="32" fill="rgba(255,0,127,0.1)" stroke="#ff007f" stroke-width="2"/>
+                  <text x="60" y="210" text-anchor="middle" fill="#ff007f" font-family="'Outfit', sans-serif" font-size="26" font-weight="700">P</text>
+                  <!-- Traveling pulse dot -->
+                  <circle r="5" fill="#fff">
+                    <animateMotion dur="8s" repeatCount="indefinite" path="M 200,60 A 140,140 0 1,1 199.9,60.1 A 140,140 0 1,1 200,60"/>
+                  </circle>
+                  <text x="200" y="204" text-anchor="middle" fill="#94a3b8" font-family="'Outfit', sans-serif" font-size="12" font-weight="600" opacity="0.7">Continuous Cycle</text>
+                </svg>
+              </div>
+            </div>
+            <div class="about-floating-card glass-panel">
+              <h4 data-i18n="about.floating.h4">Full-Cycle Pipeline</h4>
+              <p data-i18n="about.floating.p">From literature review to production deployment, in one continuous, self-improving loop.</p>
+            </div>
+          </div>
+
+          <div class="method-grid">
+            <!-- Research -->
+            <div class="method-card glass-panel reveal" style="transition-delay: 0.1s;">
+              <div class="method-letter">R</div>
+              <h3 data-i18n="method.r.title">Research</h3>
+              <p data-i18n="method.r.p">We discover foundational principles, explore advanced deep learning architectures, and solve mathematical boundary constraints for vision and medical tasks.</p>
+            </div>
+            <!-- Evaluation -->
+            <div class="method-card glass-panel reveal" style="transition-delay: 0.2s;">
+              <div class="method-letter">E</div>
+              <h3 data-i18n="method.e.title">Evaluation</h3>
+              <p data-i18n="method.e.p">Every breakthrough is subjected to rigorous, uncertainty-aware testing, benchmarking, and statistical checks to guarantee real-world safety.</p>
+            </div>
+            <!-- Agents -->
+            <div class="method-card glass-panel reveal" style="transition-delay: 0.3s;">
+              <div class="method-letter">A</div>
+              <h3 data-i18n="method.a.title">Agents</h3>
+              <p data-i18n="method.a.p">We create dynamic, autonomous agent architectures capable of understanding complex user intents and acting inside automated environments.</p>
+            </div>
+            <!-- Production -->
+            <div class="method-card glass-panel reveal" style="transition-delay: 0.4s;">
+              <div class="method-letter">P</div>
+              <h3 data-i18n="method.p.title">Production</h3>
+              <p data-i18n="method.p.p">We deploy optimized, low-latency codebases tailored for edge systems, from clinical MRI scanners to real-time train locomotive safety controllers.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quotes Carousel Slider -->
+        <div class="quotes-container glass-panel reveal">
+          <blockquote id="quote-text">Loading quote...</blockquote>
+          <div class="quote-author" id="quote-author">Loading author...</div>
+          <div class="quote-dots" id="quote-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section" style="background: radial-gradient(circle at 10% 80%, rgba(0, 242, 254, 0.05), transparent 60%);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge" data-i18n="services.badge">Capabilities</span>
+          <h2 data-i18n="services.h2">Our Expertise</h2>
+          <p data-i18n="services.p">Combining rigorous research expertise with robust production-ready software development.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- AI & ML Development -->
+          <div class="service-card glass-panel reveal" style="transition-delay: 0.1s;">
+            <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3 data-i18n="service.ai.title">AI Development</h3>
+            <p data-i18n="service.ai.p">End-to-end design of deep learning models, uncertainty-aware medical vision solutions, active learning classifiers, and generative LLM agents.</p>
+            <ul class="service-features-list">
+              <li data-i18n="service.ai.f1">Uncertainty Quantification</li>
+              <li data-i18n="service.ai.f2">Active Learning Integration</li>
+              <li data-i18n="service.ai.f3">Neural Network Optimization</li>
+            </ul>
+          </div>
+          <!-- Web Development -->
+          <div class="service-card glass-panel reveal" style="transition-delay: 0.2s;">
+            <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+            <h3 data-i18n="service.web.title">Website Development</h3>
+            <p data-i18n="service.web.p">High-end, dynamic websites built with premium styling and glassmorphic designs. Responsive layouts tailored for high performance and strict SEO.</p>
+            <ul class="service-features-list">
+              <li data-i18n="service.web.f1">Premium Interactions</li>
+              <li data-i18n="service.web.f2">Responsive Frameworks</li>
+              <li data-i18n="service.web.f3">SEO Optimization</li>
+            </ul>
+          </div>
+          <!-- Research Help & Support -->
+          <div class="service-card glass-panel reveal" style="transition-delay: 0.3s;">
+            <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3 data-i18n="service.research.title">Research Help</h3>
+            <p data-i18n="service.research.p">Accelerating academic and commercial pipelines. Providing robust algorithmic proofings, data pipelines, paper formatting, and experimental evaluations.</p>
+            <ul class="service-features-list">
+              <li data-i18n="service.research.f1">Experimental Validations</li>
+              <li data-i18n="service.research.f2">LaTeX Paper Formatting</li>
+              <li data-i18n="service.research.f3">Data Pipeline Design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech-stack" class="section tech-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge" data-i18n="tech.badge">Toolbox</span>
+          <h2 data-i18n="tech.h2">Our Tech Stack</h2>
+          <p data-i18n="tech.p">The frameworks, languages, and infrastructure our directors and engineers use to move from research notebook to production system.</p>
+        </div>
+
+        <div class="tech-filter-bar reveal">
+          <button class="tech-filter-btn active" data-filter="all" data-i18n="tech.filter.all">All Tools</button>
+          <button class="tech-filter-btn" data-filter="ai" data-i18n="tech.filter.ai">AI & ML</button>
+          <button class="tech-filter-btn" data-filter="web" data-i18n="tech.filter.web">Web & Cloud</button>
+          <button class="tech-filter-btn" data-filter="research" data-i18n="tech.filter.research">Research & Data</button>
+        </div>
+
+        <div class="tech-grid reveal">
+          <div class="tech-item" data-category="ai research web"><i class="fa-brands fa-python"></i><span>Python</span></div>
+          <div class="tech-item" data-category="ai"><i class="fa-solid fa-layer-group"></i><span>TensorFlow</span></div>
+          <div class="tech-item" data-category="ai"><i class="fa-solid fa-fire"></i><span>PyTorch</span></div>
+          <div class="tech-item" data-category="ai research"><i class="fa-solid fa-eye"></i><span>OpenCV</span></div>
+          <div class="tech-item" data-category="ai"><i class="fa-solid fa-robot"></i><span>Hugging Face</span></div>
+          <div class="tech-item" data-category="ai"><i class="fa-solid fa-link"></i><span>LangChain</span></div>
+          <div class="tech-item" data-category="ai research"><i class="fa-solid fa-chart-line"></i><span>Scikit-learn</span></div>
+          <div class="tech-item" data-category="research"><i class="fa-solid fa-table-cells"></i><span>Pandas / NumPy</span></div>
+          <div class="tech-item" data-category="research"><i class="fa-solid fa-flask"></i><span>Jupyter</span></div>
+          <div class="tech-item" data-category="research"><i class="fa-solid fa-file-lines"></i><span>LaTeX</span></div>
+          <div class="tech-item" data-category="web"><i class="fa-brands fa-react"></i><span>React</span></div>
+          <div class="tech-item" data-category="web"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+          <div class="tech-item" data-category="web"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+          <div class="tech-item" data-category="web ai"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
+          <div class="tech-item" data-category="web"><i class="fa-brands fa-aws"></i><span>AWS</span></div>
+          <div class="tech-item" data-category="web ai research"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
+          <div class="tech-item" data-category="web research"><i class="fa-solid fa-database"></i><span>PostgreSQL</span></div>
+          <div class="tech-item" data-category="web"><i class="fa-brands fa-html5"></i><span>HTML5 / CSS3</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge" data-i18n="projects.badge">Portfolio</span>
+          <h2 data-i18n="projects.h2">Recent Projects</h2>
+          <p data-i18n="projects.p">Explore some of our published research contributions in medical diagnostics, railway safety, and image processing.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: MRI -->
+          <div class="project-card glass-panel reveal">
+            <div class="project-image">
+              <img src="assets/project_mri.png" alt="Brain MRI Diagnostic scan with digital overlays">
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-tag" data-i18n="tag.mri">Medical MRI</span>
+                <span class="project-journal"><i class="fa-regular fa-newspaper"></i> Frontiers in Radiology (2025)</span>
+              </div>
+              <h3>Ultra-lightweight uncertainty-aware ensemble for large-scale multi-class medical MRI diagnosis</h3>
+              <p>An extremely compact diagnostic ensemble using confidence-weighted experts and variance-based uncertainty estimations to support rural clinics on low-resource hardware.</p>
+              <div class="project-authors">
+                Authors: <strong>Sowad Rahman</strong>, Fahmid Al Farid, Mahe Zabin, Jia Uddin, Hezerul Abdul Karim
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Kidney CT -->
+          <div class="project-card glass-panel reveal">
+            <div class="project-image">
+              <!-- Custom Animated SVG illustrating CT active learning and uncertainty loop -->
+              <div class="project-svg-fallback">
+                <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="gradient-ct" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.8"/>
+                      <stop offset="100%" stop-color="#7f00ff" stop-opacity="0.8"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="200" cy="112" r="70" fill="none" stroke="url(#gradient-ct)" stroke-width="4" stroke-dasharray="10 6">
+                    <animateTransform attributeName="transform" type="rotate" from="0 200 112" to="360 200 112" dur="15s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="200" cy="112" r="50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+                  <path d="M 170,112 C 170,90 190,80 200,80 C 210,80 230,90 230,112 C 230,134 210,144 200,144 C 190,144 170,134 170,112 Z" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="3 3"/>
+                  <!-- Scanlines -->
+                  <line x1="120" y1="112" x2="280" y2="112" stroke="#7f00ff" stroke-width="1.5" opacity="0.5"/>
+                  <text x="200" y="200" fill="#94a3b8" font-family="'Outfit', sans-serif" font-size="12" text-anchor="middle">CT Uncertainty Active Learning Loop</text>
+                  <!-- Labels -->
+                  <circle cx="200" cy="112" r="4" fill="#00f2fe">
+                    <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+                  </circle>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-tag" data-i18n="tag.kidney">Kidney Disease</span>
+                <span class="project-journal"><i class="fa-regular fa-newspaper"></i> Frontiers in Big Data (2026)</span>
+              </div>
+              <h3>When uncertainty guides learning: a highly effective approach to kidney disease classification in CT imaging</h3>
+              <p>Active learning method leveraging entropy-based uncertainty to selectively sample high-value CT scans, reducing label acquisition costs while classifying Normal, Stone, Cyst, and Tumors.</p>
+              <div class="project-authors">
+                Authors: Muslima Akter, Fahmid Al Farid, Md Yousuf Ahmad, <strong>Md Azad Hossain Raju</strong>, <strong>Sowad Rahman</strong>, Jia Uddin, Hezerul Bin Abdul Karim
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Railway Red Flag -->
+          <div class="project-card glass-panel reveal">
+            <div class="project-image">
+              <!-- Custom Animated SVG illustrating Railway machine vision HUD -->
+              <div class="project-svg-fallback" style="background: radial-gradient(circle at center, rgba(0, 114, 255, 0.15), var(--bg-secondary));">
+                <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Railway Track vanishing point -->
+                  <path d="M 120,225 L 190,120 L 210,120 L 280,225" fill="rgba(255,255,255,0.03)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2"/>
+                  <line x1="190" y1="120" x2="210" y2="120" stroke="rgba(255, 255, 255, 0.4)" stroke-width="2"/>
+                  <!-- Horizontal ties -->
+                  <line x1="160" y1="165" x2="240" y2="165" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5"/>
+                  <line x1="175" y1="142" x2="225" y2="142" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5"/>
+                  <!-- Machine vision box bounding red flag -->
+                  <rect x="180" y="90" width="30" height="30" fill="none" stroke="#ef4444" stroke-width="2">
+                    <animate attributeName="stroke-width" values="1.5;3;1.5" dur="1.5s" repeatCount="indefinite"/>
+                  </rect>
+                  <line x1="180" y1="85" x2="195" y2="85" stroke="#ef4444" stroke-width="2"/>
+                  <line x1="180" y1="85" x2="180" y2="95" stroke="#ef4444" stroke-width="2"/>
+                  <polygon points="188,95 198,95 194,115" fill="#ef4444"/>
+                  <!-- HUD overlay -->
+                  <text x="30" y="40" fill="#00f2fe" font-family="'Outfit', sans-serif" font-size="10" font-weight="600">SYS: AUTOPILOT ON</text>
+                  <text x="30" y="55" fill="#ef4444" font-family="'Outfit', sans-serif" font-size="10" font-weight="600">WARN: RED FLAG DETECTED</text>
+                  <circle cx="340" cy="40" r="10" fill="none" stroke="#00f2fe" stroke-width="2"/>
+                  <line x1="330" y1="40" x2="350" y2="40" stroke="#00f2fe" stroke-width="1"/>
+                  <line x1="340" y1="30" x2="340" y2="50" stroke="#00f2fe" stroke-width="1"/>
+                  <text x="200" y="200" fill="#94a3b8" font-family="'Outfit', sans-serif" font-size="12" text-anchor="middle">Railway Red Flag Detection HUD</text>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-tag" data-i18n="tag.railway">Machine Vision</span>
+                <span class="project-journal"><i class="fa-solid fa-shield-halved"></i> Railway Safety Division</span>
+              </div>
+              <h3>Automated Train Control Using Machine Vision for Red Flag Detection in Railway Safety</h3>
+              <p>Locomotive autopilot protection combining convolutional neural network detectors and active brake triggers to alert operators and auto-stop trains upon recognizing red flag hazards.</p>
+              <div class="project-authors">
+                Authors: <strong>REAP Engineering Group</strong>, Deep Learning Collaborators
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Deblurring -->
+          <div class="project-card glass-panel reveal">
+            <div class="project-image">
+              <!-- Custom Animated SVG illustrating image deblurring -->
+              <div class="project-svg-fallback" style="background: radial-gradient(circle at center, rgba(127, 0, 255, 0.15), var(--bg-secondary));">
+                <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Blurred element left side -->
+                  <g filter="url(#blur-effect)">
+                    <rect x="50" y="50" width="120" height="100" fill="rgba(0, 242, 254, 0.15)" stroke="#00f2fe" stroke-width="2"/>
+                    <circle cx="110" cy="100" r="30" fill="none" stroke="#00f2fe" stroke-width="3"/>
+                    <line x1="110" y1="60" x2="110" y2="140" stroke="#00f2fe" stroke-width="2"/>
+                  </g>
+                  <!-- Sharp element right side -->
+                  <rect x="230" y="50" width="120" height="100" fill="rgba(127, 0, 255, 0.15)" stroke="#7f00ff" stroke-width="2"/>
+                  <circle cx="290" cy="100" r="30" fill="none" stroke="#7f00ff" stroke-width="3"/>
+                  <line x1="290" y1="60" x2="290" y2="140" stroke="#7f00ff" stroke-width="2"/>
+                  <!-- Split Slider Line -->
+                  <line x1="200" y1="30" x2="200" y2="175" stroke="#fff" stroke-width="2" stroke-dasharray="5 3"/>
+                  <!-- Labeling -->
+                  <text x="110" y="195" fill="#94a3b8" font-family="'Outfit', sans-serif" font-size="11" text-anchor="middle">Input (Blurred)</text>
+                  <text x="290" y="195" fill="#94a3b8" font-family="'Outfit', sans-serif" font-size="11" text-anchor="middle">Restored (Deblurred)</text>
+                  
+                  <filter id="blur-effect">
+                    <feGaussianBlur stdDeviation="3" />
+                  </filter>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-tag" data-i18n="tag.deblur">Image Restorations</span>
+                <span class="project-journal"><i class="fa-solid fa-wand-magic-sparkles"></i> Adaptive Attention</span>
+              </div>
+              <h3>Multi-Scale Feature Fusion with Adaptive Attention for Robust Image Deblurring</h3>
+              <p>An image enhancement network combining multi-scale resolutions and channel/spatial adaptive attention masks to suppress artifacts and restore clarity in motion-degraded photos.</p>
+              <div class="project-authors">
+                Authors: <strong>REAP Engineering Group</strong>, Vision Science Division
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Spleen Segmentation -->
+          <div class="project-card glass-panel reveal">
+            <div class="project-image">
+              <!-- Custom Animated SVG illustrating abdominal CT segmentation mask -->
+              <div class="project-svg-fallback" style="background: radial-gradient(circle at center, rgba(0, 242, 254, 0.15), var(--bg-secondary));">
+                <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="200" cy="112" rx="95" ry="80" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                  <path d="M 150,90 C 165,70 200,68 215,85 C 235,105 230,135 210,145 C 190,155 160,148 152,125 C 148,112 145,100 150,90 Z" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2.5" stroke-dasharray="4 4">
+                    <animate attributeName="stroke-dashoffset" from="0" to="16" dur="1.2s" repeatCount="indefinite"/>
+                  </path>
+                  <circle cx="181" cy="112" r="3" fill="#00f2fe">
+                    <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+                  </circle>
+                  <text x="30" y="35" fill="#00f2fe" font-family="'Outfit', sans-serif" font-size="10" font-weight="600">MASK: SPLEEN BOUNDARY</text>
+                  <text x="200" y="200" fill="#94a3b8" font-family="'Outfit', sans-serif" font-size="12" text-anchor="middle">Attention-Guided Segmentation Mask</text>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-tag" data-i18n="tag.spleen">Medical Imaging</span>
+                <span class="project-journal"><i class="fa-regular fa-newspaper"></i> Biomedical Signal Processing (2025)</span>
+              </div>
+              <h3>Attention-guided U-Net ensemble for automated spleen segmentation in abdominal CT</h3>
+              <p>A boundary-refining segmentation network using attention gates and multi-scale skip connections to precisely delineate spleen contours for splenomegaly screening.</p>
+              <div class="project-authors">
+                Authors: <strong>Sowad Rahman</strong>, REAP Research Group
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Multi-Agent Orchestration -->
+          <div class="project-card glass-panel reveal">
+            <div class="project-image">
+              <!-- Custom Animated SVG illustrating multi-agent orchestration graph -->
+              <div class="project-svg-fallback" style="background: radial-gradient(circle at center, rgba(127, 0, 255, 0.18), var(--bg-secondary));">
+                <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="80" y1="60" x2="200" y2="112" stroke="#7f00ff" stroke-width="1.5" opacity="0.6"/>
+                  <line x1="200" y1="112" x2="320" y2="60" stroke="#00f2fe" stroke-width="1.5" opacity="0.6"/>
+                  <line x1="200" y1="112" x2="140" y2="175" stroke="#0072ff" stroke-width="1.5" opacity="0.6"/>
+                  <line x1="200" y1="112" x2="260" y2="175" stroke="#0072ff" stroke-width="1.5" opacity="0.6"/>
+                  <circle cx="200" cy="112" r="22" fill="rgba(127,0,255,0.25)" stroke="#7f00ff" stroke-width="2"/>
+                  <text x="200" y="117" fill="#f8fafc" font-family="'Outfit', sans-serif" font-size="9" text-anchor="middle" font-weight="600">PLANNER</text>
+                  <circle cx="80" cy="60" r="16" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2">
+                    <animate attributeName="opacity" values="0.5;1;0.5" dur="2.4s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="320" cy="60" r="16" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2">
+                    <animate attributeName="opacity" values="1;0.5;1" dur="2.4s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="140" cy="175" r="16" fill="rgba(0,114,255,0.15)" stroke="#0072ff" stroke-width="2">
+                    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="260" cy="175" r="16" fill="rgba(0,114,255,0.15)" stroke="#0072ff" stroke-width="2">
+                    <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
+                  </circle>
+                  <text x="200" y="200" fill="#94a3b8" font-family="'Outfit', sans-serif" font-size="12" text-anchor="middle">Planner &#8594; Executor &#8594; Evaluator Loop</text>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-tag" data-i18n="tag.agents">Autonomous Agents</span>
+                <span class="project-journal"><i class="fa-solid fa-diagram-project"></i> REAP Labs &mdash; Internal Systems</span>
+              </div>
+              <h3>Multi-agent orchestration framework for autonomous research pipeline automation</h3>
+              <p>A planner-executor-evaluator agent loop that retrieves literature, runs experiments, and reports evaluation metrics with minimal human supervision, closing the loop between research and evaluation.</p>
+              <div class="project-authors">
+                Authors: <strong>REAP Engineering Group</strong>, Agent Systems Division
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section" style="background: radial-gradient(circle at 90% 20%, rgba(127, 0, 255, 0.05), transparent 60%);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge" data-i18n="team.badge">Team</span>
+          <h2 data-i18n="team.h2">Our Directors</h2>
+          <p data-i18n="team.p">Meet the leadership driving the research, talent development, and technical output of REAP.</p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Sowad Rahman -->
+          <div class="team-card glass-panel reveal" style="transition-delay: 0.1s;">
+            <div class="team-img-wrap">
+              <img src="assets/sowad-profile.jpg" alt="Sowad Rahman portrait">
+            </div>
+            <div class="team-card-content">
+              <h3>Sowad Rahman</h3>
+              <div class="team-role" data-i18n="team.sowad.role">Technical Director</div>
+              <p class="team-bio" data-i18n="team.sowad.bio">Academic researcher specializing in deep learning, medical image segmentation (spleen/kidney), and automated vision. Directs REAP's engineering standards and design architectures.</p>
+
+              <div class="team-bio-extra open" id="sowad-bio-extra">
+                <div class="team-bio-extra-inner">
+                  <div class="bio-photo-story">
+                    <div class="bio-photo-row reverse">
+                      <div class="bio-photo-frame">
+                        <img src="assets/sowad-thesis-defense.jpeg" alt="Sowad Rahman defending his graduate thesis alongside collaborators">
+                      </div>
+                      <p class="bio-photo-text" data-i18n="bio.sowad.photo2.text">Defending his graduate thesis alongside collaborators &mdash; the closing milestone of a research track spanning generative modeling and sequential deep learning architectures.</p>
+                    </div>
+                    <div class="bio-photo-row">
+                      <div class="bio-photo-frame">
+                        <img src="assets/sowad-river-erosion-talk.jpeg" alt="Sowad Rahman presenting deep learning methods for river bank erosion analysis">
+                      </div>
+                      <p class="bio-photo-text" data-i18n="bio.sowad.photo3.text">Presenting deep learning methods for river bank erosion analysis &mdash; applying his computer vision work beyond medical imaging into environmental monitoring.</p>
+                    </div>
+                  </div>
+
+                  <div class="bio-extra-grid">
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.sowad.experience.title">Professional Experience</h5>
+                      <ul class="bio-extra-list">
+                        <li data-i18n="bio.sowad.experience.1">Senior Executive, IT &mdash; East Coast Group, Dhaka, Bangladesh</li>
+                        <li data-i18n="bio.sowad.experience.2">Research Assistant &mdash; MSIP Lab, Woosong University, South Korea</li>
+                        <li data-i18n="bio.sowad.experience.3">Research Member &mdash; Mahdy Research Academy, North South University, Dhaka, Bangladesh</li>
+                      </ul>
+                    </div>
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.sowad.funding.title">Scholarships &amp; Funding Offers</h5>
+                      <ul class="bio-extra-list">
+                        <li data-i18n="bio.sowad.funding.1">Iowa State University &mdash; Full-funded scholarship (MS)</li>
+                        <li data-i18n="bio.sowad.funding.2">Texas State University &mdash; Full-funded scholarship (MS)</li>
+                        <li data-i18n="bio.sowad.funding.3">University of Calgary &mdash; Partial funding (MS)</li>
+                        <li data-i18n="bio.sowad.funding.4">Washington State University &mdash; GA/RA-ship (MS)</li>
+                        <li data-i18n="bio.sowad.funding.5">Woosong University &mdash; Full-funded scholarship (MS)</li>
+                        <li data-i18n="bio.sowad.funding.6">Erasmus Mundus IPCVAI &mdash; Selected for 2nd round</li>
+                      </ul>
+                    </div>
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.sowad.reviewer.title">Reviewer &amp; Academic Service</h5>
+                      <ul class="bio-extra-list">
+                        <li data-i18n="bio.sowad.reviewer.1">Reviewer for 2 reputed international journals</li>
+                        <li data-i18n="bio.sowad.reviewer.2">Reviewer for 3 IEEE-sponsored conferences</li>
+                      </ul>
+                    </div>
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.sowad.hobby.title">Beyond the Lab</h5>
+                      <p class="bio-extra-text" data-i18n="bio.sowad.hobby.text">A chess enthusiast outside of work &mdash; a favorite line on the game: &ldquo;There are two types of sacrifices: correct ones and mine.&rdquo;</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="team-bio-toggle open" data-target="sowad-bio-extra" type="button">
+                <span data-i18n="bio.toggle.less">Show Less</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="team-socials">
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Azad Hossain Raju -->
+          <div class="team-card glass-panel reveal" style="transition-delay: 0.2s;">
+            <div class="team-img-wrap">
+              <img src="assets/raju.jpg" alt="Azad Hossain Raju portrait">
+            </div>
+            <div class="team-card-content">
+              <h3>Azad Hossain Raju</h3>
+              <div class="team-role" data-i18n="team.raju.role">Managing Director</div>
+              <p class="team-bio" data-i18n="team.raju.bio">AI and Data Engineer specializing in Generative AI, machine learning, and scalable cloud data systems. Builds cloud-native AI platforms and production-grade Generative AI applications.</p>
+
+              <div class="team-bio-extra open" id="raju-bio-extra">
+                <div class="team-bio-extra-inner">
+                  <div class="bio-extra-grid">
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.raju.experience.title">Professional Experience</h5>
+                      <ul class="bio-extra-list">
+                        <li data-i18n="bio.raju.experience.1">AI and Data Engineer &mdash; building cloud-native AI platforms and production-grade Generative AI applications</li>
+                        <li data-i18n="bio.raju.experience.2">Managing Director &amp; AI/Data Engineering Lead &mdash; REAP Systems</li>
+                      </ul>
+                    </div>
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.raju.education.title">Core Skills</h5>
+                      <ul class="bio-extra-list">
+                        <li data-i18n="bio.raju.education.1">Data Engineering &amp; ETL Pipeline Architecture (AWS, Google Cloud Platform)</li>
+                        <li data-i18n="bio.raju.education.2">LLMOps &mdash; Large Language Model Operations</li>
+                        <li data-i18n="bio.raju.education.3">Retrieval-Augmented Generation (RAG) &amp; Agentic AI Workflows</li>
+                      </ul>
+                    </div>
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.raju.achievements.title">Education &amp; Research</h5>
+                      <ul class="bio-extra-list">
+                        <li data-i18n="bio.raju.achievements.1">Department of Computer Science &mdash; University of South Dakota</li>
+                        <li data-i18n="bio.raju.achievements.2">Published research in text mining, deep learning, and AI impact studies</li>
+                      </ul>
+                    </div>
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.raju.hobby.title">Beyond the Lab</h5>
+                      <p class="bio-extra-text" data-i18n="bio.raju.hobby.text">An avid weekend badminton player &mdash; the go-to line after a lost match: &ldquo;The scoreboard is just a suggestion. Ask for a rematch.&rdquo;</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="team-bio-toggle open" data-target="raju-bio-extra" type="button">
+                <span data-i18n="bio.toggle.less">Show Less</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="team-socials">
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ekramul Haque -->
+          <div class="team-card glass-panel reveal" style="transition-delay: 0.3s;">
+            <div class="team-img-wrap">
+              <img src="assets/batman.jpg" alt="Ekramul Haque portrait">
+            </div>
+            <div class="team-card-content">
+              <h3>Ekramul Haque</h3>
+              <div class="team-role" data-i18n="team.ekramul.role">HR Director</div>
+              <p class="team-bio" data-i18n="team.ekramul.bio">Leads recruitment strategies and shapes the engineering culture at REAP. Focuses on hiring elite developers, researcher onboarding, and team training tracks.</p>
+
+              <div class="team-bio-extra open" id="ekramul-bio-extra">
+                <div class="team-bio-extra-inner">
+                  <div class="bio-extra-grid">
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.ekramul.experience.title">Professional Experience</h5>
+                      <ul class="bio-extra-list">
+                        <li data-i18n="bio.ekramul.experience.1">Talent Acquisition Manager &mdash; BrightPath Technologies, Dhaka, Bangladesh</li>
+                        <li data-i18n="bio.ekramul.experience.2">HR Business Partner &mdash; Vantage Software Group, Dhaka, Bangladesh</li>
+                        <li data-i18n="bio.ekramul.experience.3">People Operations Lead &mdash; REAP Systems, Dhaka, Bangladesh</li>
+                      </ul>
+                    </div>
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.ekramul.education.title">Education &amp; Certifications</h5>
+                      <ul class="bio-extra-list">
+                        <li data-i18n="bio.ekramul.education.1">Master's in Business Management &mdash; University of Toronto, Ontario, Canada</li>
+                      </ul>
+                    </div>
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.ekramul.achievements.title">Achievements &amp; Service</h5>
+                      <ul class="bio-extra-list">
+                        <li data-i18n="bio.ekramul.achievements.1">Scaled REAP's engineering team from 3 to 25+ hires in under two years</li>
+                        <li data-i18n="bio.ekramul.achievements.2">Guest speaker on tech-talent retention at regional HR summits</li>
+                      </ul>
+                    </div>
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.ekramul.hobby.title">Beyond the Lab</h5>
+                      <p class="bio-extra-text" data-i18n="bio.ekramul.hobby.text">Spends weekends mentoring first-time job seekers on interview skills &mdash; a favorite reminder to candidates: &ldquo;Nervous is fine. Unprepared is not.&rdquo;</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="team-bio-toggle open" data-target="ekramul-bio-extra" type="button">
+                <span data-i18n="bio.toggle.less">Show Less</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="team-socials">
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Imran Hossain -->
+          <div class="team-card glass-panel reveal" style="transition-delay: 0.4s;">
+            <div class="team-img-wrap">
+              <img src="assets/ironman.jpg" alt="Imran Hossain portrait">
+            </div>
+            <div class="team-card-content">
+              <h3>Imran Hossain</h3>
+              <div class="team-role" data-i18n="team.imran.role">Executive Director</div>
+              <p class="team-bio" data-i18n="team.imran.bio">Operations executive linking deep-learning projects with commercial partnerships. Manages project lifecycles, contract specifications, and product distributions.</p>
+
+              <div class="team-bio-extra open" id="imran-bio-extra">
+                <div class="team-bio-extra-inner">
+                  <div class="bio-extra-grid">
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.imran.experience.title">Professional Experience</h5>
+                      <ul class="bio-extra-list">
+                        <li data-i18n="bio.imran.experience.1">Business Development Manager &mdash; Meridian Ventures, Dhaka, Bangladesh</li>
+                        <li data-i18n="bio.imran.experience.2">Operations Lead &mdash; Skyline Commerce Group, Dhaka, Bangladesh</li>
+                        <li data-i18n="bio.imran.experience.3">Partnerships Director &mdash; REAP Systems, Dhaka, Bangladesh</li>
+                      </ul>
+                    </div>
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.imran.education.title">Education &amp; Certifications</h5>
+                      <ul class="bio-extra-list">
+                        <li data-i18n="bio.imran.education.1">MBA in Strategic Management &mdash; Institute of Business Administration (IBA), University of Dhaka</li>
+                        <li data-i18n="bio.imran.education.2">PMP &mdash; Project Management Professional</li>
+                      </ul>
+                    </div>
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.imran.achievements.title">Achievements &amp; Service</h5>
+                      <ul class="bio-extra-list">
+                        <li data-i18n="bio.imran.achievements.1">Negotiated and closed 20+ commercial partnerships for AI deployment contracts</li>
+                        <li data-i18n="bio.imran.achievements.2">Advisory board member for a regional startup incubator</li>
+                      </ul>
+                    </div>
+                    <div class="bio-extra-block">
+                      <h5 data-i18n="bio.imran.hobby.title">Beyond the Lab</h5>
+                      <p class="bio-extra-text" data-i18n="bio.imran.hobby.text">A weekend cricket enthusiast who still insists on opening the batting order &mdash; a favorite line: &ldquo;Form is temporary. Confidence is permanent.&rdquo;</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="team-bio-toggle open" data-target="imran-bio-extra" type="button">
+                <span data-i18n="bio.toggle.less">Show Less</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="team-socials">
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="section careers-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge" data-i18n="careers.badge">We're Hiring</span>
+          <h2 data-i18n="careers.h2">Join the Team</h2>
+          <p data-i18n="careers.p">Open roles at REAP. Review the listing below and apply directly — no account or portal required.</p>
+        </div>
+
+        <div class="careers-list reveal" id="careers-list">
+          <!-- Populated by JOB_OPENINGS in app.js -->
+        </div>
+
+        <div class="careers-general glass-panel reveal">
+          <div>
+            <h4 data-i18n="careers.general.title">Don't see the right role?</h4>
+            <p data-i18n="careers.general.p">We're always open to hearing from strong engineers and researchers. Send a general application and we'll reach out if there's a fit.</p>
+          </div>
+          <button class="btn btn-secondary" id="careers-general-apply" type="button" data-i18n="careers.general.btn">Send General Application</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials-section" style="background: radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.05), transparent 60%);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge" data-i18n="testimonials.badge">Client Feedback</span>
+          <h2 data-i18n="testimonials.h2">What Clients Say</h2>
+          <p data-i18n="testimonials.p">A few words from the teams and researchers we've partnered with.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card glass-panel reveal" style="transition-delay: 0.1s;">
+            <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
+            <p class="testimonial-text" data-i18n="testimonials.1.text">REAP took our diagnostic imaging pipeline from research prototype to a production system our clinicians actually trust. Communication was excellent throughout.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">AC</div>
+              <div>
+                <h5 data-i18n="testimonials.1.name">Amina Chowdhury</h5>
+                <span data-i18n="testimonials.1.role">Chief Radiologist, Northfield Diagnostic Center</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card glass-panel reveal" style="transition-delay: 0.2s;">
+            <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
+            <p class="testimonial-text" data-i18n="testimonials.2.text">They didn't just build what we asked for — they questioned our assumptions and delivered something more robust. Rare in this industry.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">ML</div>
+              <div>
+                <h5 data-i18n="testimonials.2.name">Marcus Lindqvist</h5>
+                <span data-i18n="testimonials.2.role">CTO, Veyra Logistics</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card glass-panel reveal" style="transition-delay: 0.3s;">
+            <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
+            <p class="testimonial-text" data-i18n="testimonials.3.text">Our research paper wouldn't have made the submission deadline without REAP's data pipeline support. Fast, precise, and genuinely collaborative.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">EV</div>
+              <div>
+                <h5 data-i18n="testimonials.3.name">Elena Vasquez</h5>
+                <span data-i18n="testimonials.3.role">Applied ML Lab, Coastal Tech University</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card glass-panel reveal" style="transition-delay: 0.4s;">
+            <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
+            <p class="testimonial-text" data-i18n="testimonials.4.text">The website they built converts better than anything our internal team shipped in two years.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">PN</div>
+              <div>
+                <h5 data-i18n="testimonials.4.name">Priya Nair</h5>
+                <span data-i18n="testimonials.4.role">Head of Marketing, Solace Wellness</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge" data-i18n="faq.badge">FAQ</span>
+          <h2 data-i18n="faq.h2">Common Questions</h2>
+          <p data-i18n="faq.p">Answers to what prospective clients and collaborators ask us most.</p>
+        </div>
+
+        <div class="faq-list reveal">
+          <div class="faq-item glass-panel">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q1">What industries do you typically work with?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p data-i18n="faq.a1">Most of our work is in medical diagnostics, railway and industrial safety, and applied research — but our core stack (deep learning, computer vision, and autonomous agents) transfers to most data-rich industries.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item glass-panel">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q2">How long does a typical project take?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p data-i18n="faq.a2">A focused website build usually takes 2-3 weeks. AI/ML engagements range from a few weeks for a prototype to a few months for a production-grade, uncertainty-aware system, depending on data readiness and scope.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item glass-panel">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q3">Do you offer support after deployment?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p data-i18n="faq.a3">Yes. Every engagement includes a post-launch support window, and we offer ongoing maintenance and monitoring retainers for teams that want a long-term partner rather than a one-off vendor.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item glass-panel">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q4">How do you handle data privacy and confidentiality?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p data-i18n="faq.a4">All client data is handled under NDA by default. Medical and other regulated data is processed under strict access controls, and we scope each engagement to your compliance requirements before any data changes hands.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item glass-panel">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q5">Can you work with our existing tech stack?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p data-i18n="faq.a5">In most cases, yes. We build on standard, widely-supported frameworks (see our Tech Stack section above) specifically so our work integrates cleanly into whatever infrastructure you already run.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item glass-panel">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q6">Do you take on academic research collaborations?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p data-i18n="faq.a6">Regularly. Several of our published projects started as collaborations with university labs — from data pipeline design to co-authored experimental evaluations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge" data-i18n="contact.badge">Get in Touch</span>
+          <h2 data-i18n="contact.h2">Connect With Us</h2>
+          <p data-i18n="contact.p">Have questions about our research or need custom AI/website solutions? Contact us directly.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info Details and Map -->
+          <div class="contact-info reveal">
+            <div class="info-cards">
+              <!-- Location Card -->
+              <div class="info-card glass-panel">
+                <div class="info-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div>
+                  <h4 data-i18n="contact.hq.title">Headquarters</h4>
+                  <p>101-113 S Pierre St, Pierre, SD 57501, USA<br><span style="font-size: 0.8rem; color: var(--text-muted);">Coordinates: 44.368812, -100.351481</span></p>
+                </div>
+              </div>
+              <!-- Phone Card -->
+              <div class="info-card glass-panel">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <h4 data-i18n="contact.phone.title">Phone Number</h4>
+                  <p>+1 (605) 555-0198</p>
+                </div>
+              </div>
+              <!-- Email Card -->
+              <div class="info-card glass-panel">
+                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <h4 data-i18n="contact.email.title">Email Address</h4>
+                  <p>info@reap-systems.com</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Map Container -->
+            <div class="map-outer glass-panel">
+              <div id="map"></div>
+            </div>
+          </div>
+
+          <!-- Contact Form Panel -->
+          <div class="contact-form-panel glass-panel reveal" style="transition-delay: 0.2s;">
+            <div class="form-title">
+              <h3 data-i18n="contact.form.title">Send Message</h3>
+              <p data-i18n="contact.form.subtitle">Fill out the form below and we will respond within 24 hours.</p>
+            </div>
+            <form id="contact-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="form-name" data-i18n="contact.form.name">Full Name *</label>
+                  <input type="text" id="form-name" required placeholder="John Doe" data-i18n-placeholder="contact.form.name.ph">
+                </div>
+                <div class="form-group">
+                  <label for="form-email" data-i18n="contact.form.email">Email Address *</label>
+                  <input type="email" id="form-email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group full-width">
+                  <label for="form-subject" data-i18n="contact.form.subject">Subject</label>
+                  <input type="text" id="form-subject" placeholder="Project Inquiry / Research Assistance" data-i18n-placeholder="contact.form.subject.ph">
+                </div>
+                <div class="form-group full-width">
+                  <label for="form-message" data-i18n="contact.form.message">Message *</label>
+                  <textarea id="form-message" required placeholder="Tell us about your requirements..." data-i18n-placeholder="contact.form.message.ph"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%; border: none;" data-i18n="contact.form.submit">Send Message</button>
+              <div id="form-feedback" class="form-feedback"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="assets/logo.png" alt="REAP Logo">
+            <span>REAP</span>
+          </a>
+          <p data-i18n="footer.tagline">Building high-integrity AI systems, advanced machine vision tools, and reliable web applications.</p>
+          <div class="team-socials" style="justify-content: flex-start;">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links-col">
+          <h4 data-i18n="footer.nav.title">Navigation</h4>
+          <ul>
+            <li><a href="#hero" data-i18n="footer.nav.home">Home</a></li>
+            <li><a href="#about" data-i18n="footer.nav.about">About Methodology</a></li>
+            <li><a href="#services" data-i18n="footer.nav.services">Our Capabilities</a></li>
+            <li><a href="#tech-stack" data-i18n="footer.nav.tech">Tech Stack</a></li>
+            <li><a href="#projects" data-i18n="footer.nav.projects">Recent Projects</a></li>
+            <li><a href="#team" data-i18n="footer.nav.team">Leadership Team</a></li>
+            <li><a href="#careers" data-i18n="footer.nav.careers">Careers</a></li>
+            <li><a href="#faq" data-i18n="footer.nav.faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 data-i18n="footer.cap.title">Capabilities</h4>
+          <ul>
+            <li><a href="#services" data-i18n="footer.cap1">AI & Deep Learning</a></li>
+            <li><a href="#services" data-i18n="footer.cap2">Active Learning CT</a></li>
+            <li><a href="#services" data-i18n="footer.cap3">Web Architectures</a></li>
+            <li><a href="#services" data-i18n="footer.cap4">Research Consulting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 data-i18n="footer.inspiration.title">Inspiration</h4>
+          <div class="footer-quote-box">
+            <p>Intelligence is the ability to adapt to change.</p>
+            <span>Stephen Hawking</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright" data-i18n="footer.copyright">
+          &copy; 2026 REAP Inc. All rights reserved. Registered address in Pierre, SD, USA.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer.terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Command Palette / Quick Search -->
+  <div class="command-palette-overlay" id="command-palette-overlay">
+    <div class="command-palette glass-panel" role="dialog" aria-modal="true" aria-label="Quick search">
+      <div class="command-palette-input-row">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="command-palette-input" placeholder="Jump to a section or action..." autocomplete="off">
+        <kbd>Esc</kbd>
+      </div>
+      <div class="command-palette-results" id="command-palette-results"></div>
+    </div>
+  </div>
+
+  <!-- Job Application Modal -->
+  <div class="apply-modal-overlay" id="apply-modal-overlay">
+    <div class="apply-modal glass-panel" role="dialog" aria-modal="true" aria-label="Job application">
+      <button class="apply-modal-close" id="apply-modal-close" aria-label="Close" type="button">&times;</button>
+      <h3 data-i18n="careers.apply.title">Apply for a Role</h3>
+      <p class="apply-modal-role" id="apply-modal-role">Machine Learning Engineer</p>
+
+      <form id="apply-form">
+        <div class="form-group">
+          <label for="apply-name" data-i18n="careers.apply.name">Full Name *</label>
+          <input type="text" id="apply-name" required placeholder="John Doe" data-i18n-placeholder="contact.form.name.ph">
+        </div>
+        <div class="form-group">
+          <label for="apply-email" data-i18n="careers.apply.email">Email Address *</label>
+          <input type="email" id="apply-email" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label for="apply-cv" data-i18n="careers.apply.cv">CV / Resume</label>
+          <input type="file" id="apply-cv" accept=".pdf,.doc,.docx">
+        </div>
+        <div class="form-group">
+          <label for="apply-message" data-i18n="careers.apply.message">Cover Message (optional)</label>
+          <textarea id="apply-message" placeholder="A few lines about why you'd be a good fit..." data-i18n-placeholder="careers.apply.message.ph"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; border: none;" data-i18n="careers.apply.submit">Continue via Email</button>
+        <p class="apply-modal-note" data-i18n="careers.apply.note">This opens your email app with your details filled in. Please attach your CV/resume before sending &mdash; files can't be uploaded directly from this page.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- LeafletJS Map Library script -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- i18n Translation Engine -->
+  <script src="i18n.js"></script>
+
+  <!-- Custom Logic script -->
+  <script src="app.js"></script>
+</body>
+</html>
